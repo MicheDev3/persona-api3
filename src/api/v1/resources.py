@@ -60,8 +60,9 @@ class Search(object):
     def on_get(self, req, resp):
         output = {}
         valid_data = req.context['valid_data']
-        personas = self.session.query(Persona).\
-            filter(Persona.username == valid_data['username']).all()
+        personas = self.session.query(Persona).filter(
+            Persona.username == valid_data['username']
+        ).all()
         if personas:
             output = [to_dict(persona) for persona in personas]
         resp.body = ujson.dumps(output, ensure_ascii=False)
