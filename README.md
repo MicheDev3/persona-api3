@@ -237,7 +237,6 @@ All the resources are based on the Persona Model in order to retrieve data neede
 
 There are four middleware used to perform a specific behavior for the resources, instead of using hooks:
 * AuthenticationManager: check if the authentication is correct using HTTP Header 
-* LogManager: log the resources response information if succeeded
 * SessionManager: inject the db session into the resources, opening and closing the connection. It will commit only if no error occurred.
 * ValidatorManager: validate the inputs based on resource conditions
 
