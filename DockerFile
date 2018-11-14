@@ -1,0 +1,26 @@
+FROM python:3.7.1-slim
+MAINTAINER Michele Sarigu
+
+# coping all source code
+COPY . .
+
+# server env
+ENV HOST 0.0.0.0
+ENV PORT 8080
+
+# secret key
+ENV SECRET_KEY ef4d7c6d8b42c1f5
+
+# log level
+ENV LOG_LEVEL INFO
+
+# sourcing src
+ENV PYTHONPATH="$PYTHONPATH:/src"
+
+# upgrading pip if old version
+RUN pip install --upgrade pip
+# installing dependency
+RUN pip install -r requirements.txt
+
+# executing script
+CMD [ "python", "src/run.py" ]
