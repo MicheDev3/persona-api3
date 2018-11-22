@@ -55,11 +55,13 @@ Setting virtualenvwrapper in bash_profile:
     export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
     # use the same directory for virtualenvs as virtualenvwrapper
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
+    # use a default python version
+    export VIRTUALENV_PYTHON=<path-to-python-version>
     # makes pip detect an active virtualenv and install to it
     export PIP_RESPECT_VIRTUALENV=true
 
-    if [[ -r <path_to_virtualenvwrapper.sh> ]]; then
-    source <path_to_virtualenvwrapper.sh>
+    if [[ -r <path-to-virtualenvwrapper.sh> ]]; then
+    source <path-to-virtualenvwrapper.sh>
     else
         echo "WARNING: Can't find virtualenvwrapper.sh"
     fi
@@ -75,6 +77,7 @@ Add the following environment variables:
     set WORKON_HOME=%HOMEPATH%/environment/.virtualenvs
     set VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
     set PIP_VIRTUALENV_BASE=$WORKON_HOME
+    set VIRTUALENV_PYTHON=<path-to-python-version>
     set PIP_RESPECT_VIRTUALENV=true
 
 ##### VIRTUALENV COMMANDS:
